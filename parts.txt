@@ -1,0 +1,10 @@
+RFID Shield: http://www.sparkfun.com/products/10406
+RFID Module: http://www.sparkfun.com/products/10126
+Arduino: http://www.sparkfun.com/products/10356
+Servo: http://www.sparkfun.com/products/9064
+Power-Supply: http://www.sparkfun.com/products/298
+Additional a 0,125 inch sheet of some hard cardboard or wood for the laser-cuter
+
+Use hot glue to put all the pieces together and connect the servo with the door.
+
+Have fun and send me modifications!
