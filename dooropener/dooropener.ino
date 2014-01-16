@@ -5,14 +5,16 @@ heun at mit.edu
 
 Build up on Aaron Weiss "RFID Eval 13.56MHz Shield example sketch v10" 
 OSHW license: http://freedomdefined.org/OSHW
+
+Ported to Arduino 1.0 by scottgwald
 */
 
-#include <NewSoftSerial.h>
+#include <SoftwareSerial.h>
 #include <Servo.h> 
 
  
 Servo myservo;  
-NewSoftSerial rfid(7, 8);
+SoftwareSerial rfid(7, 8);
 int swit = 0;
 
 //Hold your Tag to the reader and look up the ID send via Serial.
@@ -98,11 +100,11 @@ void check_for_notag()
 void halt()
 {
  //Halt tag
-  rfid.print(255, BYTE);
-  rfid.print(0, BYTE);
-  rfid.print(1, BYTE);
-  rfid.print(147, BYTE);
-  rfid.print(148, BYTE);
+  rfid.print((char)255);
+  rfid.print((char)0);
+  rfid.print((char)1);
+  rfid.print((char)147);
+  rfid.print((char)148);
 }
 
 void parse()
@@ -163,11 +165,12 @@ void read_serial()
 void seek()
 {
   //search for RFID tag
-  rfid.print(255, BYTE);
-  rfid.print(0, BYTE);
-  rfid.print(1, BYTE);
-  rfid.print(130, BYTE);
-  rfid.print(131, BYTE); 
+  
+  rfid.print((char)255);
+  rfid.print((char)0);
+  rfid.print((char)1);
+  rfid.print((char)130);
+  rfid.print((char)131);
   delay(10);
 }
 
